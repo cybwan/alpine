@@ -64,7 +64,7 @@ jre-8u201-linux-arm64.tar.gz:
 			   jre/plugin \
 			   jre/lib/deploy* \
 			   jre/lib/*javafx* \
-			   jre/lib/*jfx* \
+			   jre/lib/*jfx* && \
 	cp bin/jps jre/bin/ && \
 	cp lib/tools.jar jre/lib/ && \
 	mv jre jre1.8.0_201 && \
