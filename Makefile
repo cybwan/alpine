@@ -74,6 +74,6 @@ jre-8u201-linux-arm64.tar.gz:
 	rm -rf jdk1.8.0_201 jdk-8u201-linux-arm64-vfp-hflt.tar.gz
 
 .PHONY: docker-build-alpine-jdk
-docker-build-alpine-jdk: DOCKER_BUILDX_PLATFORM=linux/amd64,linux/arm64
-docker-build-alpine-jdk: jre-8u201-linux-amd64.tar.gz jre-8u201-linux-arm64.tar.gz
+docker-build-alpine-jdk: DOCKER_BUILDX_PLATFORM=linux/amd64
+docker-build-alpine-jdk: jre-8u201-linux-amd64.tar.gz
 	docker buildx build --builder osm --platform=$(DOCKER_BUILDX_PLATFORM) -o $(DOCKER_BUILDX_OUTPUT) -t $(CTR_REGISTRY)/alpine-jdk:latest -f dockerfiles/Dockerfile.alpine-jdk .
