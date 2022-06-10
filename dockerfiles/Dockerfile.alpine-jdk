@@ -1,0 +1,16 @@
+FROM pingcap/alpine-glibc:alpine-3.14.6-gcompat
+
+ARG TARGETARCH
+
+MAINTAINER cybwan <baili@flomesh.io>
+
+ADD jre-8u201-linux-$TARGETARCH.tar.gz /
+
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo "Asia/Shanghai">>/etc/timezone
+
+ENV JAVA_HOME=/jre1.8.0_201 \
+    CLASSPATH=/jre1.8.0_201/bin \
+    PATH=/jre1.8.0_201/bin:${PATH}
+
+CMD ["java" "-version"]
