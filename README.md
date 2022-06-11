@@ -1,4 +1,4 @@
-# alpine
+# alpine-oracle-jdk
 
 ## make docker-build-alpine-jdk
 
